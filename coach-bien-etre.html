@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harmonie Intérieure - Coach de Vie & Yoga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap"
+    />
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+        scroll-behavior: smooth;
+        background-color: #f8f5f2;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+      .hero-pattern {
+        background-color: #f0e6e0;
+        background-image: radial-gradient(#e6d7d0 0.5px, transparent 0.5px),
+          radial-gradient(#e6d7d0 0.5px, #f0e6e0 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+      }
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #94618e;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-bold text-[#94618E]"
+          >Harmonie Intérieure</a
+        >
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button
+            id="mobile-menu-button"
+            class="text-gray-600 focus:outline-none"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#about"
+            class="nav-link text-gray-700 hover:text-[#94618E] transition"
+            >À propos</a
+          >
+          <a
+            href="#philosophy"
+            class="nav-link text-gray-700 hover:text-[#94618E] transition"
+            >Philosophie</a
+          >
+          <a
+            href="#services"
+            class="nav-link text-gray-700 hover:text-[#94618E] transition"
+            >Services</a
+          >
+          <a
+            href="#testimonials"
+            class="nav-link text-gray-700 hover:text-[#94618E] transition"
+            >Témoignages</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-gray-700 hover:text-[#94618E] transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 px-4">
+        <a href="#about" class="block py-2 text-gray-700 hover:text-[#94618E]"
+          >À propos</a
+        >
+        <a
+          href="#philosophy"
+          class="block py-2 text-gray-700 hover:text-[#94618E]"
+          >Philosophie</a
+        >
+        <a
+          href="#services"
+          class="block py-2 text-gray-700 hover:text-[#94618E]"
+          >Services</a
+        >
+        <a
+          href="#testimonials"
+          class="block py-2 text-gray-700 hover:text-[#94618E]"
+          >Témoignages</a
+        >
+        <a href="#contact" class="block py-2 text-gray-700 hover:text-[#94618E]"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-28 pb-20">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#49274A] mb-4">
+              Trouvez votre équilibre intérieur
+            </h1>
+            <p class="text-lg text-gray-700 mb-8">
+              Coaching de vie personnalisé, pratiques de bien-être et yoga pour
+              vous accompagner vers une vie plus épanouie et harmonieuse.
+            </p>
+            <a
+              href="#contact"
+              class="bg-[#94618E] text-white px-8 py-3 rounded-full font-medium hover:bg-[#49274A] transition duration-300 inline-block"
+              >Prendre rendez-vous</a
+            >
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative w-64 h-64 md:w-80 md:h-80">
+              <svg
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute w-full h-full"
+              >
+                <path
+                  fill="#F8D9D0"
+                  d="M44.7,-76.4C58.9,-69.2,71.8,-59,79.6,-45.3C87.4,-31.7,90.2,-14.8,88.8,1.4C87.4,17.6,81.8,33.2,72.7,46.2C63.6,59.1,51,69.5,37,75.3C23,81.1,7.7,82.3,-7.2,79.9C-22.1,77.5,-36.5,71.5,-48.8,62.5C-61.1,53.5,-71.3,41.4,-77.7,27.3C-84.1,13.2,-86.7,-3,-83.3,-17.8C-79.9,-32.6,-70.5,-46,-58.4,-54.1C-46.3,-62.2,-31.5,-65,-17.8,-70.7C-4.1,-76.3,8.5,-84.8,22.8,-83.9C37.1,-83,53.1,-72.7,44.7,-76.4Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <svg
+                class="absolute inset-0 w-full h-full"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke="#94618E"
+                  stroke-width="0.5"
+                  d="M50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 C30,90 10,70 10,50 C10,30 30,10 50,10 Z"
+                />
+                <g transform="translate(50, 50)">
+                  <!-- Stylized yoga figure -->
+                  <path
+                    fill="#49274A"
+                    d="M0,-15 C5,-15 10,-10 10,-5 C10,0 5,5 0,5 C-5,5 -10,0 -10,-5 C-10,-10 -5,-15 0,-15 Z"
+                  />
+                  <path
+                    fill="#49274A"
+                    d="M0,5 L0,15 M-10,25 L0,15 L10,25 M-15,5 L-5,10 M5,10 L15,5"
+                  />
+                  <path
+                    fill="none"
+                    stroke="#49274A"
+                    stroke-width="2"
+                    d="M-10,-5 C-10,-10 -5,-15 0,-15 C5,-15 10,-10 10,-5 C10,0 5,5 0,5 C-5,5 -10,0 -10,-5 Z M0,5 L0,15 M-10,25 L0,15 L10,25 M-15,5 L-5,10 M5,10 L15,5"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-2/5 mb-10 md:mb-0">
+            <div
+              class="relative w-full h-96 rounded-lg overflow-hidden shadow-xl"
+            >
+              <svg
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 w-full h-full"
+              >
+                <path
+                  fill="#F8D9D0"
+                  d="M47.7,-73.2C62.9,-66.7,77,-56.3,83.9,-42.1C90.8,-27.9,90.5,-9.9,87.2,6.9C83.9,23.7,77.6,39.3,67.2,51.8C56.8,64.3,42.3,73.7,26.6,78.9C10.9,84.1,-6,85.1,-21.4,80.9C-36.8,76.7,-50.7,67.3,-62.3,55.1C-73.9,42.9,-83.2,27.9,-86.7,11.3C-90.2,-5.3,-87.9,-23.5,-79.4,-38.1C-70.9,-52.7,-56.2,-63.7,-41.1,-70.3C-26,-76.9,-10.5,-79.1,3.9,-85.5C18.3,-91.9,36.6,-102.5,47.7,-73.2Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg
+                  class="w-48 h-48"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="50" cy="30" r="15" fill="#94618E" />
+                  <path
+                    d="M50,45 L50,70"
+                    stroke="#49274A"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M30,55 L70,55"
+                    stroke="#49274A"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M35,85 L50,70 L65,85"
+                    stroke="#49274A"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-3/5 md:pl-12">
+            <h2 class="text-3xl font-bold text-[#49274A] mb-6">
+              À propos de moi
+            </h2>
+            <p class="text-gray-700 mb-4">
+              Bonjour, je suis Sophie Martin, coach de vie certifiée et
+              professeure de yoga avec plus de 10 ans d'expérience dans
+              l'accompagnement des personnes vers leur épanouissement personnel.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Mon parcours a débuté après une reconversion professionnelle suite
+              à 15 ans dans le monde de l'entreprise. Cette expérience m'a
+              permis de comprendre les défis du quotidien et les pressions que
+              nous subissons tous.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Formée en coaching holistique, en méditation pleine conscience et
+              certifiée en Hatha et Vinyasa yoga, j'ai développé une approche
+              unique qui combine ces différentes pratiques pour vous aider à
+              retrouver équilibre et sérénité.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span
+                class="bg-[#F8D9D0] text-[#49274A] px-4 py-2 rounded-full text-sm"
+                >Coach certifiée</span
+              >
+              <span
+                class="bg-[#F8D9D0] text-[#49274A] px-4 py-2 rounded-full text-sm"
+                >Yoga Vinyasa</span
+              >
+              <span
+                class="bg-[#F8D9D0] text-[#49274A] px-4 py-2 rounded-full text-sm"
+                >Méditation</span
+              >
+              <span
+                class="bg-[#F8D9D0] text-[#49274A] px-4 py-2 rounded-full text-sm"
+                >Bien-être holistique</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-20 bg-[#f8f5f2]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-[#49274A] mb-12">
+          Ma Philosophie
+        </h2>
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <p class="text-gray-700 mb-6">
+            Je crois profondément que chaque personne possède en elle les
+            ressources nécessaires pour s'épanouir et vivre en harmonie. Mon
+            rôle est de vous guider pour révéler votre potentiel et vous aider à
+            surmonter les obstacles qui vous empêchent d'avancer.
+          </p>
+          <p class="text-gray-700">
+            Ma méthode repose sur trois piliers fondamentaux qui s'entrelacent
+            pour créer un chemin vers l'équilibre et le bien-être durable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="w-16 h-16 bg-[#F8D9D0] rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-[#94618E]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#49274A] mb-3">
+              Conscience de soi
+            </h3>
+            <p class="text-gray-700">
+              Développer une compréhension profonde de vos valeurs, besoins et
+              aspirations pour aligner vos actions avec votre essence véritable.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="w-16 h-16 bg-[#F8D9D0] rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-[#94618E]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#49274A] mb-3">
+              Pratique intégrative
+            </h3>
+            <p class="text-gray-700">
+              Combiner des techniques de coaching, de yoga et de méditation pour
+              adresser simultanément le corps, l'esprit et les émotions.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-md text-center">
+            <div
+              class="w-16 h-16 bg-[#F8D9D0] rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-[#94618E]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#49274A] mb-3">
+              Transformation durable
+            </h3>
+            <p class="text-gray-700">
+              Créer des changements profonds et durables en vous donnant les
+              outils pour maintenir votre équilibre face aux défis de la vie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-[#49274A] mb-12">
+          Mes Services & Tarifs
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="service-card bg-[#f8f5f2] rounded-lg overflow-hidden shadow-md"
+          >
+            <div class="h-3 bg-[#94618E]"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#49274A] mb-3">
+                Coaching Individuel
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Sessions personnalisées pour vous accompagner dans vos défis
+                personnels ou professionnels.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Séance de 60 minutes</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">En présentiel ou visio</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Suivi personnalisé</span>
+                </li>
+              </ul>
+              <div class="flex justify-between items-end">
+                <div>
+                  <span class="text-2xl font-bold text-[#49274A]">75€</span>
+                  <span class="text-gray-600">/séance</span>
+                </div>
+                <a
+                  href="#contact"
+                  class="bg-[#94618E] text-white px-4 py-2 rounded-full text-sm hover:bg-[#49274A] transition duration-300"
+                  >Réserver</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card bg-[#f8f5f2] rounded-lg overflow-hidden shadow-md"
+          >
+            <div class="h-3 bg-[#94618E]"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#49274A] mb-3">
+                Cours de Yoga
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Cours adaptés à tous les niveaux pour développer force,
+                souplesse et sérénité.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Séance de 75 minutes</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Petit groupe (max 8)</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Matériel fourni</span>
+                </li>
+              </ul>
+              <div class="flex justify-between items-end">
+                <div>
+                  <span class="text-2xl font-bold text-[#49274A]">20€</span>
+                  <span class="text-gray-600">/cours</span>
+                </div>
+                <a
+                  href="#contact"
+                  class="bg-[#94618E] text-white px-4 py-2 rounded-full text-sm hover:bg-[#49274A] transition duration-300"
+                  >Réserver</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card bg-[#f8f5f2] rounded-lg overflow-hidden shadow-md"
+          >
+            <div class="h-3 bg-[#94618E]"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#49274A] mb-3">
+                Programme Complet
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Un accompagnement sur 3 mois pour une transformation profonde et
+                durable.
+              </p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">6 séances de coaching</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">8 cours de yoga</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-[#94618E] mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span class="text-gray-700">Support et méditations</span>
+                </li>
+              </ul>
+              <div class="flex justify-between items-end">
+                <div>
+                  <span class="text-2xl font-bold text-[#49274A]">590€</span>
+                  <span class="text-gray-600">/programme</span>
+                </div>
+                <a
+                  href="#contact"
+                  class="bg-[#94618E] text-white px-4 py-2 rounded-full text-sm hover:bg-[#49274A] transition duration-300"
+                  >Réserver</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-[#f8f5f2]">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-[#49274A] mb-12">
+          Ce que disent mes clients
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#F8D9D0] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-[#94618E] font-bold text-xl">M</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#49274A]">Marie L.</h4>
+                <p class="text-gray-600 text-sm">Coaching individuel</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-[#F8B195]">
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Les séances avec Sophie m'ont permis de prendre du recul sur ma
+              vie professionnelle et de trouver un meilleur équilibre. Sa
+              méthode est douce mais efficace, et j'ai pu mettre en place des
+              changements concrets."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#F8D9D0] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-[#94618E] font-bold text-xl">T</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#49274A]">Thomas B.</h4>
+                <p class="text-gray-600 text-sm">Programme complet</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-[#F8B195]">
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Le programme de 3 mois a été une révélation. La combinaison du
+              coaching et du yoga m'a permis de gérer mon stress chronique et de
+              retrouver une énergie que je n'avais plus depuis des années. Un
+              investissement qui en vaut vraiment la peine."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#F8D9D0] rounded-full flex items-center justify-center mr-4"
+              >
+                <span class="text-[#94618E] font-bold text-xl">S</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#49274A]">Sarah D.</h4>
+                <p class="text-gray-600 text-sm">Cours de yoga</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="flex text-[#F8B195]">
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Les cours de yoga de Sophie sont un véritable moment de pause
+              dans ma semaine. Son approche est bienveillante et adaptée à
+              chacun. J'ai progressé à mon rythme et je ressens les bienfaits au
+              quotidien, tant physiquement que mentalement."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-[#49274A] mb-12">
+          Me contacter
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-10">
+          <div class="md:w-1/2">
+            <form class="bg-[#f8f5f2] p-8 rounded-lg shadow-md">
+              <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Nom</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#94618E]"
+                  placeholder="Votre nom"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#94618E]"
+                  placeholder="Votre email"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="service"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Service</label
+                >
+                <select
+                  id="service"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#94618E]"
+                >
+                  <option value="" disabled selected>Choisir un service</option>
+                  <option value="coaching">Coaching individuel</option>
+                  <option value="yoga">Cours de yoga</option>
+                  <option value="program">Programme complet</option>
+                  <option value="other">Autre demande</option>
+                </select>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#94618E]"
+                  placeholder="Votre message"
+                ></textarea>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="w-full bg-[#94618E] text-white py-3 rounded-lg font-medium hover:bg-[#49274A] transition duration-300"
+                >
+                  Envoyer
+                </button>
+                <p class="text-center text-sm text-gray-600 mt-4">
+                  Ce formulaire est une démonstration. Pour un vrai contact,
+                  utilisez les coordonnées ci-contre.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="md:w-1/2">
+            <div class="bg-[#f8f5f2] p-8 rounded-lg shadow-md h-full">
+              <h3 class="text-xl font-bold text-[#49274A] mb-6">
+                Informations de contact
+              </h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div class="bg-[#F8D9D0] p-3 rounded-full mr-4">
+                    <svg
+                      class="w-6 h-6 text-[#94618E]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-[#49274A] mb-1">Adresse</h4>
+                    <p class="text-gray-700">
+                      15 rue de la Sérénité<br />75011 Paris, France
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-[#F8D9D0] p-3 rounded-full mr-4">
+                    <svg
+                      class="w-6 h-6 text-[#94618E]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-[#49274A] mb-1">Téléphone</h4>
+                    <p class="text-gray-700">+33 6 12 34 56 78</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-[#F8D9D0] p-3 rounded-full mr-4">
+                    <svg
+                      class="w-6 h-6 text-[#94618E]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-[#49274A] mb-1">Email</h4>
+                    <p class="text-gray-700">contact@harmonie-interieure.fr</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-[#F8D9D0] p-3 rounded-full mr-4">
+                    <svg
+                      class="w-6 h-6 text-[#94618E]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-[#49274A] mb-1">Horaires</h4>
+                    <p class="text-gray-700">
+                      Lundi - Vendredi: 9h - 19h<br />Samedi: 10h - 16h
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-medium text-[#49274A] mb-3">Suivez-moi</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="bg-[#F8D9D0] p-3 rounded-full hover:bg-[#94618E] hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-[#F8D9D0] p-3 rounded-full hover:bg-[#94618E] hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-[#F8D9D0] p-3 rounded-full hover:bg-[#94618E] hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-[#F8D9D0] p-3 rounded-full hover:bg-[#94618E] hover:text-white transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21.593 7.203c-.23-.999-.832-1.783-1.621-2.204-1.441-.762-7.682-.762-7.682-.762s-6.241 0-7.682.762c-.789.421-1.391 1.205-1.621 2.204-.381 2.018-.381 6.231-.381 6.231s0 4.212.381 6.23c.23.999.832 1.783 1.621 2.204 1.441.762 7.682.762 7.682.762s6.241 0 7.682-.762c.789-.421 1.391-1.205 1.621-2.204.381-2.018.381-6.23.381-6.23s0-4.213-.381-6.231zm-11.422 10.034v-7.604l5.135 3.804-5.135 3.8z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#49274A] text-white py-10">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h3 class="text-2xl font-bold mb-2">Harmonie Intérieure</h3>
+            <p class="text-gray-300">Coaching de vie, bien-être et yoga</p>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="#about" class="text-gray-300 hover:text-white transition"
+              >À propos</a
+            >
+            <a
+              href="#philosophy"
+              class="text-gray-300 hover:text-white transition"
+              >Philosophie</a
+            >
+            <a
+              href="#services"
+              class="text-gray-300 hover:text-white transition"
+              >Services</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-300 hover:text-white transition"
+              >Témoignages</a
+            >
+            <a href="#contact" class="text-gray-300 hover:text-white transition"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 text-sm"
+        >
+          <p>&copy; 2023 Harmonie Intérieure. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Form submission (demo only)
+      const contactForm = document.querySelector("form");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(
+          "Merci pour votre message ! Ceci est une démonstration, dans un site réel votre message serait envoyé."
+        );
+        contactForm.reset();
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'94b78a74846e31de',t:'MTc0OTIwOTA0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

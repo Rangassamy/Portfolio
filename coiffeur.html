@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Élégance Coiffure | Salon de beauté</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero-section {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Crect width='1200' height='600' fill='%23333'/%3E%3Cpath d='M600,150 C750,150 850,250 850,350 C850,450 750,550 600,550 C450,550 350,450 350,350 C350,250 450,150 600,150 Z' fill='%23222'/%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: scale(1.03);
+      }
+
+      .gallery-img {
+        transition: all 0.3s ease;
+      }
+
+      .gallery-img:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #d4a373 0%, #c08552 100%);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .scroll-indicator {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-stone-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <div class="text-2xl font-bold text-stone-800 font-serif">
+              Élégance<span class="text-amber-700">.</span>
+            </div>
+          </div>
+
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#accueil"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Accueil</a
+            >
+            <a
+              href="#services"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Services</a
+            >
+            <a
+              href="#galerie"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Galerie</a
+            >
+            <a
+              href="#equipe"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Notre équipe</a
+            >
+            <a
+              href="#contact"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Contact</a
+            >
+          </div>
+
+          <div class="md:hidden">
+            <button id="menu-toggle" class="text-stone-800 focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div class="flex flex-col space-y-4 py-4">
+            <a
+              href="#accueil"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Accueil</a
+            >
+            <a
+              href="#services"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Services</a
+            >
+            <a
+              href="#galerie"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Galerie</a
+            >
+            <a
+              href="#equipe"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Notre équipe</a
+            >
+            <a
+              href="#contact"
+              class="text-stone-800 hover:text-amber-700 transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="accueil"
+      class="hero-section min-h-screen flex items-center justify-center text-white pt-16"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Révélez votre beauté naturelle
+        </h1>
+        <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+          Un salon de coiffure où l'art et l'expertise se rencontrent pour
+          sublimer votre style
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="#services"
+            class="btn-primary text-white font-medium py-3 px-8 rounded-full text-lg"
+            >Nos services</a
+          >
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-white text-white font-medium py-3 px-8 rounded-full text-lg hover:bg-white hover:text-stone-800 transition-colors"
+            >Prendre rendez-vous</a
+          >
+        </div>
+        <div class="mt-20 scroll-indicator">
+          <svg
+            class="w-8 h-8 mx-auto"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="relative">
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 bg-amber-700 rounded-full absolute -top-6 -left-6 z-0"
+              ></div>
+              <div
+                class="w-64 h-64 md:w-80 md:h-80 bg-stone-200 rounded-full relative z-10 overflow-hidden"
+              >
+                <svg
+                  class="w-full h-full text-stone-300"
+                  fill="currentColor"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M50,20 C65,20 75,35 75,50 C75,65 65,80 50,80 C35,80 25,65 25,50 C25,35 35,20 50,20 Z"
+                  ></path>
+                  <circle cx="50" cy="35" r="8" fill="#6B7280"></circle>
+                  <path
+                    d="M30,70 C30,55 70,55 70,70"
+                    fill="none"
+                    stroke="#6B7280"
+                    stroke-width="3"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Notre passion, votre beauté
+            </h2>
+            <p class="text-lg text-stone-600 mb-6">
+              Depuis plus de 15 ans, notre salon de coiffure s'engage à offrir
+              des services exceptionnels dans une ambiance chaleureuse et
+              accueillante. Notre équipe de professionnels passionnés est dédiée
+              à vous faire vivre une expérience unique.
+            </p>
+            <p class="text-lg text-stone-600 mb-8">
+              Nous utilisons exclusivement des produits de haute qualité,
+              respectueux de l'environnement et de vos cheveux, pour des
+              résultats qui dépasseront vos attentes.
+            </p>
+            <div class="flex flex-wrap gap-6">
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-award text-amber-700 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold">Expertise</h3>
+                  <p class="text-stone-600">Stylistes certifiés</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center mr-4"
+                >
+                  <i class="fas fa-leaf text-amber-700 text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold">Produits bio</h3>
+                  <p class="text-stone-600">Respectueux de la nature</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-stone-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos services</h2>
+          <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+            Découvrez notre gamme complète de services professionnels pour
+            prendre soin de vos cheveux et sublimer votre style.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-cut text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Coupe & Styling</h3>
+              <p class="text-stone-600 mb-4">
+                Des coupes personnalisées adaptées à votre visage, style de vie
+                et personnalité, réalisées par nos experts.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 35€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-palette text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Coloration</h3>
+              <p class="text-stone-600 mb-4">
+                Des colorations vibrantes et durables utilisant des produits de
+                qualité supérieure pour des résultats éclatants.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 55€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-spa text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Soins & Traitements</h3>
+              <p class="text-stone-600 mb-4">
+                Des soins profonds et traitements revitalisants pour réparer et
+                nourrir vos cheveux en profondeur.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 45€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-fire text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Lissage & Brushing</h3>
+              <p class="text-stone-600 mb-4">
+                Des techniques de lissage et brushing pour dompter vos cheveux
+                et créer le style parfait.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 40€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-magic text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Coiffures de mariage</h3>
+              <p class="text-stone-600 mb-4">
+                Des coiffures élégantes et sophistiquées pour votre jour
+                spécial, adaptées à votre robe et thème.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 85€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300"
+          >
+            <div class="h-48 bg-amber-700 flex items-center justify-center">
+              <i class="fas fa-child text-white text-5xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3">Coiffure enfants</h3>
+              <p class="text-stone-600 mb-4">
+                Des coupes amusantes et confortables pour les plus jeunes dans
+                une ambiance détendue et accueillante.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-amber-700 font-bold">À partir de 25€</span>
+                <button class="text-amber-700 hover:text-amber-800 font-medium">
+                  En savoir plus
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Notre galerie</h2>
+          <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+            Explorez nos créations et laissez-vous inspirer par le talent de nos
+            stylistes professionnels.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Gallery images using SVG placeholders -->
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-amber-200"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#c08552" />
+              <path d="M30,85 C30,60 70,60 70,85" fill="#c08552" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-amber-100"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#d4a373" />
+              <path d="M20,90 C20,50 80,50 80,90" fill="#d4a373" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-stone-200"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#a08060" />
+              <path d="M25,85 C25,55 75,55 75,85" fill="#a08060" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-amber-50"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#b07040" />
+              <path d="M30,80 C30,60 70,60 70,80" fill="#b07040" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-stone-100"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#c09060" />
+              <path d="M20,85 C20,55 80,55 80,85" fill="#c09060" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-amber-100"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#b08050" />
+              <path d="M25,90 C25,50 75,50 75,90" fill="#b08050" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-stone-200"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#a07040" />
+              <path d="M30,85 C30,60 70,60 70,85" fill="#a07040" />
+            </svg>
+          </div>
+          <div class="gallery-img overflow-hidden rounded-lg shadow-md">
+            <svg
+              class="w-full h-64 bg-amber-50"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="50" cy="35" r="20" fill="#d4a373" />
+              <path d="M20,90 C20,50 80,50 80,90" fill="#d4a373" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <button
+            class="btn-primary text-white font-medium py-3 px-8 rounded-full text-lg"
+          >
+            Voir plus de créations
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="py-20 bg-stone-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Notre équipe</h2>
+          <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+            Rencontrez nos stylistes talentueux et passionnés qui donneront vie
+            à votre vision.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="h-64 bg-stone-200 relative">
+              <svg
+                class="w-full h-full"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="50" cy="35" r="20" fill="#a08060" />
+                <path d="M25,90 C25,50 75,50 75,90" fill="#a08060" />
+              </svg>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">Sophie Martin</h3>
+              <p class="text-amber-700 mb-3">Directrice artistique</p>
+              <p class="text-stone-600 mb-4">
+                Plus de 15 ans d'expérience dans les salons de luxe à Paris et
+                New York.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="h-64 bg-stone-200 relative">
+              <svg
+                class="w-full h-full"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="50" cy="35" r="20" fill="#b08050" />
+                <path d="M30,90 C30,55 70,55 70,90" fill="#b08050" />
+              </svg>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">Thomas Dubois</h3>
+              <p class="text-amber-700 mb-3">Expert coloriste</p>
+              <p class="text-stone-600 mb-4">
+                Spécialiste des techniques de coloration innovantes et
+                respectueuses des cheveux.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+          >
+            <div class="h-64 bg-stone-200 relative">
+              <svg
+                class="w-full h-full"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="50" cy="35" r="20" fill="#c09060" />
+                <path d="M25,85 C25,50 75,50 75,85" fill="#c09060" />
+              </svg>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold mb-1">Léa Bernard</h3>
+              <p class="text-amber-700 mb-3">Styliste senior</p>
+              <p class="text-stone-600 mb-4">
+                Passionnée par les coiffures de mariage et les événements
+                spéciaux.
+              </p>
+              <div class="flex justify-center space-x-4">
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-stone-600 hover:text-amber-700">
+                  <i class="fab fa-pinterest"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ce que disent nos clients
+          </h2>
+          <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+            Découvrez les expériences de nos clients satisfaits et pourquoi ils
+            nous font confiance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card bg-stone-50 rounded-lg p-8 shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-amber-200 flex items-center justify-center mr-4"
+              >
+                <span class="text-amber-700 font-bold">ML</span>
+              </div>
+              <div>
+                <h4 class="font-bold">Marie Leroy</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-stone-600 italic">
+              "J'ai adoré mon expérience chez Élégance ! Sophie a parfaitement
+              compris ce que je voulais et le résultat dépasse mes attentes.
+              L'ambiance est chaleureuse et le service impeccable."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card bg-stone-50 rounded-lg p-8 shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-amber-200 flex items-center justify-center mr-4"
+              >
+                <span class="text-amber-700 font-bold">JD</span>
+              </div>
+              <div>
+                <h4 class="font-bold">Julie Dupont</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-stone-600 italic">
+              "Thomas a réalisé une coloration parfaite pour moi. Les produits
+              utilisés sont de qualité et mes cheveux n'ont jamais été aussi
+              beaux et en bonne santé. Je recommande vivement !"
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card bg-stone-50 rounded-lg p-8 shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-amber-200 flex items-center justify-center mr-4"
+              >
+                <span class="text-amber-700 font-bold">PR</span>
+              </div>
+              <div>
+                <h4 class="font-bold">Pierre Rousseau</h4>
+                <div class="flex text-amber-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-stone-600 italic">
+              "Enfin un salon où les hommes sont aussi bien accueillis que les
+              femmes ! Coupe impeccable, conseils personnalisés et ambiance
+              détendue. Je ne changerai plus de salon."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="contact" class="py-20 bg-amber-700 text-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Prenez rendez-vous
+            </h2>
+            <p class="text-lg mb-8">
+              Réservez votre prochain rendez-vous en ligne et laissez-nous
+              prendre soin de vous. Notre équipe vous contactera pour confirmer
+              votre réservation.
+            </p>
+
+            <div class="mb-8">
+              <h3 class="text-xl font-bold mb-4">Nos horaires</h3>
+              <div class="grid grid-cols-2 gap-2">
+                <div>Lundi - Vendredi</div>
+                <div>9h00 - 19h00</div>
+                <div>Samedi</div>
+                <div>9h00 - 18h00</div>
+                <div>Dimanche</div>
+                <div>Fermé</div>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4">Contact</h3>
+              <div class="mb-3 flex items-center">
+                <i class="fas fa-map-marker-alt mr-3"></i>
+                <span>123 Avenue des Coiffeurs, 75001 Paris</span>
+              </div>
+              <div class="mb-3 flex items-center">
+                <i class="fas fa-phone mr-3"></i>
+                <span>01 23 45 67 89</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope mr-3"></i>
+                <span>contact@elegance-coiffure.fr</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 md:pl-12">
+            <form class="bg-white rounded-lg p-8 shadow-lg">
+              <h3 class="text-2xl font-bold mb-6 text-stone-800">
+                Formulaire de réservation
+              </h3>
+
+              <div class="mb-4">
+                <label class="block text-stone-700 font-medium mb-2" for="name"
+                  >Nom complet</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                  placeholder="Votre nom"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-stone-700 font-medium mb-2" for="email"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                  placeholder="Votre email"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-stone-700 font-medium mb-2" for="phone"
+                  >Téléphone</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                  placeholder="Votre numéro"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  class="block text-stone-700 font-medium mb-2"
+                  for="service"
+                  >Service souhaité</label
+                >
+                <select
+                  id="service"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                >
+                  <option value="">Sélectionnez un service</option>
+                  <option value="coupe">Coupe & Styling</option>
+                  <option value="coloration">Coloration</option>
+                  <option value="soins">Soins & Traitements</option>
+                  <option value="lissage">Lissage & Brushing</option>
+                  <option value="mariage">Coiffure de mariage</option>
+                  <option value="enfants">Coiffure enfants</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="block text-stone-700 font-medium mb-2" for="date"
+                  >Date souhaitée</label
+                >
+                <input
+                  type="date"
+                  id="date"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label
+                  class="block text-stone-700 font-medium mb-2"
+                  for="message"
+                  >Message (optionnel)</label
+                >
+                <textarea
+                  id="message"
+                  rows="3"
+                  class="w-full px-4 py-2 border border-stone-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-stone-800"
+                  placeholder="Informations complémentaires"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-amber-700 text-white font-medium py-3 px-4 rounded-md hover:bg-amber-800 transition-colors"
+              >
+                Réserver maintenant
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 font-serif">
+              Élégance<span class="text-amber-500">.</span>
+            </h3>
+            <p class="text-stone-400 mb-4">
+              Votre salon de coiffure de confiance pour révéler votre beauté
+              naturelle et sublimer votre style.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-stone-400 hover:text-amber-500">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-stone-400 hover:text-amber-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-stone-400 hover:text-amber-500">
+                <i class="fab fa-pinterest-p"></i>
+              </a>
+              <a href="#" class="text-stone-400 hover:text-amber-500">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Liens rapides</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#accueil" class="text-stone-400 hover:text-amber-500"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-stone-400 hover:text-amber-500"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#galerie" class="text-stone-400 hover:text-amber-500"
+                  >Galerie</a
+                >
+              </li>
+              <li>
+                <a href="#equipe" class="text-stone-400 hover:text-amber-500"
+                  >Notre équipe</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-stone-400 hover:text-amber-500"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-stone-400 hover:text-amber-500"
+                  >Coupe & Styling</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-stone-400 hover:text-amber-500"
+                  >Coloration</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-stone-400 hover:text-amber-500"
+                  >Soins & Traitements</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-stone-400 hover:text-amber-500"
+                  >Lissage & Brushing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-stone-400 hover:text-amber-500"
+                  >Coiffures de mariage</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-amber-500"></i>
+                <span class="text-stone-400"
+                  >123 Avenue des Coiffeurs, 75001 Paris</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone mt-1 mr-3 text-amber-500"></i>
+                <span class="text-stone-400">01 23 45 67 89</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-envelope mt-1 mr-3 text-amber-500"></i>
+                <span class="text-stone-400">contact@elegance-coiffure.fr</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-stone-700 mt-10 pt-6 text-center text-stone-500"
+        >
+          <p>&copy; 2023 Élégance Coiffure. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+
+      // Form submission (demo)
+      const form = document.querySelector("form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Merci ! Votre demande de rendez-vous a été envoyée. Nous vous contacterons bientôt pour confirmer."
+          );
+          form.reset();
+        });
+      }
+
+      // Service card hover effect
+      const serviceCards = document.querySelectorAll(".service-card");
+      serviceCards.forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.querySelector("i").classList.add("fa-bounce");
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.querySelector("i").classList.remove("fa-bounce");
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'94b7781f57a54c1b',t:'MTc0OTIwODI4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

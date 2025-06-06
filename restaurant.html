@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Gourmet - Restaurant Gastronomique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap");
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #333;
+        background-color: #f9f7f3;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600' viewBox='0 0 1200 600'%3E%3Crect width='1200' height='600' fill='%23333'/%3E%3Cpath d='M600,450 C750,450 850,350 850,300 C850,250 800,200 700,200 C600,200 550,250 550,300 C550,350 600,400 700,400' stroke='%23f8f8f8' stroke-width='8' fill='none'/%3E%3Ccircle cx='700' cy='250' r='30' fill='%23f8f8f8'/%3E%3Crect x='500' y='350' width='200' height='100' rx='10' fill='%23f8f8f8'/%3E%3C/svg%3E");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .menu-item {
+        transition: transform 0.3s ease;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .reservation-form input,
+      .reservation-form select {
+        transition: border-color 0.3s ease;
+      }
+
+      .reservation-form input:focus,
+      .reservation-form select:focus {
+        border-color: #9c6644;
+        outline: none;
+      }
+
+      .tab-active {
+        color: #9c6644;
+        border-bottom: 2px solid #9c6644;
+      }
+
+      .testimonial {
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial:hover {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <a href="#" class="text-2xl font-bold text-[#9C6644]">Le Gourmet</a>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#accueil"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Accueil</a
+            >
+            <a
+              href="#menu"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Menu</a
+            >
+            <a
+              href="#apropos"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >À propos</a
+            >
+            <a
+              href="#galerie"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Galerie</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Contact</a
+            >
+          </div>
+
+          <div class="hidden md:block">
+            <a
+              href="#reservation"
+              class="bg-[#9C6644] text-white px-6 py-2 rounded-md hover:bg-[#7d5035] transition"
+              >Réserver</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="#accueil"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Accueil</a
+            >
+            <a
+              href="#menu"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Menu</a
+            >
+            <a
+              href="#apropos"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >À propos</a
+            >
+            <a
+              href="#galerie"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Galerie</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-[#9C6644] transition"
+              >Contact</a
+            >
+            <a
+              href="#reservation"
+              class="bg-[#9C6644] text-white px-4 py-2 rounded-md hover:bg-[#7d5035] transition text-center"
+              >Réserver</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="accueil"
+      class="hero h-screen flex items-center justify-center text-center"
+    >
+      <div class="container mx-auto px-4">
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+          Le Gourmet
+        </h1>
+        <p class="text-xl md:text-2xl text-white mb-8">
+          Une expérience culinaire inoubliable
+        </p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="#menu"
+            class="bg-[#9C6644] text-white px-8 py-3 rounded-md hover:bg-[#7d5035] transition text-lg"
+            >Découvrir notre menu</a
+          >
+          <a
+            href="#reservation"
+            class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-gray-800 transition text-lg"
+            >Réserver une table</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <div class="relative">
+              <div
+                class="bg-[#9C6644] w-64 h-64 md:w-80 md:h-80 rounded-full absolute -top-6 -left-6 -z-10"
+              ></div>
+              <div class="bg-gray-200 w-full h-96 rounded-lg overflow-hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 400 300"
+                  width="100%"
+                  height="100%"
+                >
+                  <rect width="400" height="300" fill="#e2e2e2" />
+                  <path
+                    d="M200,250 C300,250 350,150 350,100 C350,50 300,0 200,0 C100,0 50,50 50,100 C50,150 100,250 200,250"
+                    fill="#9C6644"
+                    opacity="0.3"
+                  />
+                  <circle cx="200" cy="100" r="60" fill="#9C6644" />
+                  <rect
+                    x="170"
+                    y="170"
+                    width="60"
+                    height="100"
+                    rx="10"
+                    fill="#333"
+                  />
+                  <circle cx="200" cy="100" r="40" fill="#f9f7f3" />
+                  <path
+                    d="M180,90 L220,90 M180,110 L220,110"
+                    stroke="#333"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 mt-10 md:mt-0">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre Histoire</h2>
+            <p class="text-gray-600 mb-6">
+              Fondé en 2005 par le Chef Michel Dupont, Le Gourmet est né d'une
+              passion pour la cuisine française authentique et les produits de
+              saison. Notre restaurant s'engage à offrir une expérience
+              gastronomique exceptionnelle dans un cadre élégant et chaleureux.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Chaque plat est préparé avec soin, en utilisant des ingrédients
+              frais et locaux, pour vous offrir des saveurs authentiques qui
+              raviront vos papilles.
+            </p>
+            <div class="flex items-center space-x-6">
+              <div>
+                <h4 class="text-xl font-bold text-[#9C6644]">15+</h4>
+                <p class="text-gray-500">Années d'expérience</p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-[#9C6644]">50+</h4>
+                <p class="text-gray-500">Plats signatures</p>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-[#9C6644]">10k+</h4>
+                <p class="text-gray-500">Clients satisfaits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-[#f9f7f3]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Notre Menu</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Découvrez notre sélection de plats préparés avec passion par notre
+            Chef et son équipe.
+          </p>
+        </div>
+
+        <!-- Menu Tabs -->
+        <div class="flex justify-center mb-12">
+          <div class="inline-flex border-b border-gray-300">
+            <button
+              class="menu-tab tab-active px-6 py-3 font-medium"
+              data-tab="entrees"
+            >
+              Entrées
+            </button>
+            <button class="menu-tab px-6 py-3 font-medium" data-tab="plats">
+              Plats
+            </button>
+            <button class="menu-tab px-6 py-3 font-medium" data-tab="desserts">
+              Desserts
+            </button>
+            <button class="menu-tab px-6 py-3 font-medium" data-tab="boissons">
+              Boissons
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu Content -->
+        <div class="menu-content" id="entrees">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Foie Gras Maison</h3>
+                  <p class="text-gray-600 mb-2">
+                    Foie gras de canard mi-cuit, chutney de figues et pain
+                    brioché toasté
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">18€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Salade Niçoise</h3>
+                  <p class="text-gray-600 mb-2">
+                    Thon frais, œufs, tomates, olives, poivrons et anchois
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">14€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Velouté de Champignons</h3>
+                  <p class="text-gray-600 mb-2">
+                    Crème de champignons des bois et truffe noire
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">12€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">
+                    Carpaccio de Saint-Jacques
+                  </h3>
+                  <p class="text-gray-600 mb-2">
+                    Saint-Jacques fraîches, huile d'olive citronnée et fleur de
+                    sel
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">16€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-content hidden" id="plats">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Filet de Bœuf Rossini</h3>
+                  <p class="text-gray-600 mb-2">
+                    Filet de bœuf, escalope de foie gras poêlée, sauce au porto
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">32€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Magret de Canard</h3>
+                  <p class="text-gray-600 mb-2">
+                    Magret de canard, sauce aux fruits rouges et purée de
+                    patates douces
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">28€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Risotto aux Truffes</h3>
+                  <p class="text-gray-600 mb-2">
+                    Risotto crémeux, truffe noire et parmesan
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">26€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Bar Grillé</h3>
+                  <p class="text-gray-600 mb-2">
+                    Filet de bar, légumes de saison et sauce vierge
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">30€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-content hidden" id="desserts">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Crème Brûlée</h3>
+                  <p class="text-gray-600 mb-2">
+                    Crème brûlée à la vanille de Madagascar
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">10€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Fondant au Chocolat</h3>
+                  <p class="text-gray-600 mb-2">
+                    Cœur coulant au chocolat noir et glace vanille
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">12€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Tarte Tatin</h3>
+                  <p class="text-gray-600 mb-2">
+                    Tarte aux pommes caramélisées et crème fraîche
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">9€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Assiette de Fromages</h3>
+                  <p class="text-gray-600 mb-2">
+                    Sélection de fromages affinés et pain aux noix
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">14€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-content hidden" id="boissons">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Vin Rouge</h3>
+                  <p class="text-gray-600 mb-2">
+                    Sélection de vins rouges de nos régions
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">6-12€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Vin Blanc</h3>
+                  <p class="text-gray-600 mb-2">
+                    Sélection de vins blancs de nos régions
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">6-10€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Cocktails Signature</h3>
+                  <p class="text-gray-600 mb-2">
+                    Créations originales de notre barman
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">12-15€</span>
+              </div>
+            </div>
+
+            <div class="menu-item bg-white p-6 rounded-lg shadow-md">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Eaux et Softs</h3>
+                  <p class="text-gray-600 mb-2">
+                    Sélection de boissons sans alcool
+                  </p>
+                </div>
+                <span class="text-[#9C6644] font-bold">4-6€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block border-2 border-[#9C6644] text-[#9C6644] px-8 py-3 rounded-md hover:bg-[#9C6644] hover:text-white transition"
+            >Télécharger le menu complet</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Notre Galerie</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Découvrez l'ambiance de notre restaurant et nos créations
+            culinaires.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gallery Item 1 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <circle cx="200" cy="150" r="80" fill="#9C6644" opacity="0.7" />
+              <rect
+                x="120"
+                y="120"
+                width="160"
+                height="100"
+                rx="5"
+                fill="#f9f7f3"
+              />
+              <circle cx="200" cy="150" r="30" fill="#333" />
+            </svg>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <rect
+                x="50"
+                y="50"
+                width="300"
+                height="200"
+                rx="10"
+                fill="#9C6644"
+                opacity="0.5"
+              />
+              <circle cx="150" cy="150" r="50" fill="#f9f7f3" />
+              <circle cx="250" cy="150" r="50" fill="#333" />
+            </svg>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <path
+                d="M50,250 L350,250 L200,50 Z"
+                fill="#9C6644"
+                opacity="0.6"
+              />
+              <circle cx="200" cy="150" r="60" fill="#f9f7f3" />
+              <rect x="170" y="120" width="60" height="60" fill="#333" />
+            </svg>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <rect
+                x="100"
+                y="50"
+                width="200"
+                height="200"
+                rx="100"
+                fill="#9C6644"
+                opacity="0.6"
+              />
+              <rect x="150" y="100" width="100" height="100" fill="#f9f7f3" />
+              <circle cx="200" cy="150" r="30" fill="#333" />
+            </svg>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <path
+                d="M50,50 L350,50 L350,250 L50,250 Z"
+                stroke="#9C6644"
+                stroke-width="20"
+                fill="none"
+              />
+              <circle cx="200" cy="150" r="70" fill="#f9f7f3" />
+              <path
+                d="M170,130 L230,130 M170,150 L230,150 M170,170 L230,170"
+                stroke="#333"
+                stroke-width="8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-md h-64 bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400 300"
+              width="100%"
+              height="100%"
+            >
+              <rect width="400" height="300" fill="#e2e2e2" />
+              <circle cx="200" cy="150" r="100" fill="#9C6644" opacity="0.4" />
+              <rect x="150" y="100" width="100" height="100" fill="#f9f7f3" />
+              <path
+                d="M175,125 L225,125 M175,150 L225,150 M175,175 L225,175"
+                stroke="#333"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-[#f9f7f3]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Ce que disent nos clients</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Découvrez les avis de nos clients sur leur expérience au Gourmet.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-xl font-bold"
+              >
+                S
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Sophie Martin</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Une expérience culinaire exceptionnelle ! Les plats sont
+              délicieux et le service est impeccable. Je recommande vivement le
+              filet de bœuf Rossini."
+            </p>
+          </div>
+
+          <div class="testimonial bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-xl font-bold"
+              >
+                P
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Pierre Dubois</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Le cadre est élégant et l'ambiance chaleureuse. Les plats sont
+              raffinés et les saveurs sont au rendez-vous. Un vrai moment de
+              plaisir gustatif !"
+            </p>
+          </div>
+
+          <div class="testimonial bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-xl font-bold"
+              >
+                L
+              </div>
+              <div class="ml-4">
+                <h4 class="font-bold">Lucie Bernard</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "J'ai fêté mon anniversaire au Gourmet et ce fut une soirée
+              mémorable. Le menu dégustation est une véritable découverte
+              gustative. Merci à toute l'équipe !"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-20 bg-[#9C6644]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-white">
+            Réservez votre table
+          </h2>
+          <p class="text-white opacity-90 max-w-2xl mx-auto">
+            Réservez votre table en quelques clics pour vivre une expérience
+            gastronomique inoubliable.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <form id="reservation-form" class="reservation-form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-gray-700 mb-2"
+                  >Nom complet</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-gray-700 mb-2"
+                  >Téléphone</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="guests" class="block text-gray-700 mb-2"
+                  >Nombre de personnes</label
+                >
+                <select
+                  id="guests"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                >
+                  <option value="">Sélectionnez</option>
+                  <option value="1">1 personne</option>
+                  <option value="2">2 personnes</option>
+                  <option value="3">3 personnes</option>
+                  <option value="4">4 personnes</option>
+                  <option value="5">5 personnes</option>
+                  <option value="6">6 personnes</option>
+                  <option value="7+">7 personnes ou plus</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="date" class="block text-gray-700 mb-2">Date</label>
+                <input
+                  type="date"
+                  id="date"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="time" class="block text-gray-700 mb-2">Heure</label>
+                <select
+                  id="time"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                  required
+                >
+                  <option value="">Sélectionnez</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="19:00">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                </select>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="message" class="block text-gray-700 mb-2"
+                  >Message (optionnel)</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9C6644]"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="mt-8 text-center">
+              <button
+                type="submit"
+                class="bg-[#9C6644] text-white px-8 py-3 rounded-md hover:bg-[#7d5035] transition"
+              >
+                Réserver maintenant
+              </button>
+            </div>
+          </form>
+
+          <div
+            id="reservation-success"
+            class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-md text-center"
+          >
+            Votre réservation a été envoyée avec succès ! Nous vous contacterons
+            pour confirmer.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">Contactez-nous</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Pour toute question ou information supplémentaire, n'hésitez pas à
+            nous contacter.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6">
+            <div
+              class="w-16 h-16 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Adresse</h3>
+            <p class="text-gray-600">
+              123 Rue de la Gastronomie<br />75001 Paris, France
+            </p>
+          </div>
+
+          <div class="text-center p-6">
+            <div
+              class="w-16 h-16 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+            >
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Téléphone</h3>
+            <p class="text-gray-600">+33 1 23 45 67 89</p>
+          </div>
+
+          <div class="text-center p-6">
+            <div
+              class="w-16 h-16 bg-[#9C6644] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4"
+            >
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Email</h3>
+            <p class="text-gray-600">contact@legourmet.fr</p>
+          </div>
+        </div>
+
+        <div class="mt-16 bg-gray-200 rounded-lg overflow-hidden h-96">
+          <!-- Map Placeholder -->
+          <div
+            class="w-full h-full flex items-center justify-center bg-gray-300"
+          >
+            <div class="text-center">
+              <i class="fas fa-map-marked-alt text-5xl text-gray-500 mb-4"></i>
+              <p class="text-gray-600">Carte interactive</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opening Hours -->
+    <section class="py-20 bg-[#f9f7f3]">
+      <div class="container mx-auto px-4">
+        <div
+          class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="p-8 md:p-12">
+              <h3 class="text-2xl font-bold mb-6">Horaires d'ouverture</h3>
+              <ul class="space-y-4">
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Lundi</span>
+                  <span class="font-medium">Fermé</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Mardi - Vendredi</span>
+                  <span class="font-medium">12:00 - 14:30, 19:00 - 22:30</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Samedi</span>
+                  <span class="font-medium">12:00 - 15:00, 19:00 - 23:00</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Dimanche</span>
+                  <span class="font-medium">12:00 - 15:00, Fermé le soir</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-[#9C6644] p-8 md:p-12 text-white">
+              <h3 class="text-2xl font-bold mb-6">Réservation</h3>
+              <p class="mb-6">
+                Pour garantir votre table, nous vous recommandons de réserver à
+                l'avance, surtout pour les week-ends.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#reservation"
+                  class="bg-white text-[#9C6644] px-6 py-2 rounded-md hover:bg-gray-100 transition"
+                  >Réserver</a
+                >
+                <a
+                  href="tel:+33123456789"
+                  class="border border-white px-6 py-2 rounded-md hover:bg-white hover:text-[#9C6644] transition"
+                  >Appeler</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 class="text-2xl font-bold mb-4">Le Gourmet</h4>
+            <p class="text-gray-400 mb-4">
+              Une expérience culinaire inoubliable au cœur de Paris.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-tripadvisor"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-4">Liens rapides</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#accueil"
+                  class="text-gray-400 hover:text-white transition"
+                  >Accueil</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#menu"
+                  class="text-gray-400 hover:text-white transition"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#apropos"
+                  class="text-gray-400 hover:text-white transition"
+                  >À propos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#galerie"
+                  class="text-gray-400 hover:text-white transition"
+                  >Galerie</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-[#9C6644]"></i>
+                <span class="text-gray-400"
+                  >123 Rue de la Gastronomie<br />75001 Paris, France</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone mr-3 text-[#9C6644]"></i>
+                <span class="text-gray-400">+33 1 23 45 67 89</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-[#9C6644]"></i>
+                <span class="text-gray-400">contact@legourmet.fr</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-4">Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Inscrivez-vous pour recevoir nos offres spéciales et événements.
+            </p>
+            <form class="flex">
+              <input
+                type="email"
+                placeholder="Votre email"
+                class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-800"
+              />
+              <button
+                type="submit"
+                class="bg-[#9C6644] px-4 py-2 rounded-r-md hover:bg-[#7d5035] transition"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p class="text-gray-400">
+            &copy; 2023 Le Gourmet. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Menu Tabs
+      const menuTabs = document.querySelectorAll(".menu-tab");
+      const menuContents = document.querySelectorAll(".menu-content");
+
+      menuTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs
+          menuTabs.forEach((t) => t.classList.remove("tab-active"));
+
+          // Add active class to clicked tab
+          tab.classList.add("tab-active");
+
+          // Hide all content
+          menuContents.forEach((content) => content.classList.add("hidden"));
+
+          // Show corresponding content
+          const contentId = tab.getAttribute("data-tab");
+          document.getElementById(contentId).classList.remove("hidden");
+        });
+      });
+
+      // Reservation Form
+      document
+        .getElementById("reservation-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Simple validation
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const guests = document.getElementById("guests").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+
+          if (name && email && phone && guests && date && time) {
+            // Show success message
+            document
+              .getElementById("reservation-success")
+              .classList.remove("hidden");
+
+            // Reset form
+            document.getElementById("reservation-form").reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              document
+                .getElementById("reservation-success")
+                .classList.add("hidden");
+            }, 5000);
+          }
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (!mobileMenu.classList.contains("hidden")) {
+              mobileMenu.classList.add("hidden");
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'94b77d6bb2304c1b',t:'MTc0OTIwODUwNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
