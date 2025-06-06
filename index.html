@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script>
+    <!-- <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -30,7 +30,7 @@
           },
         },
       };
-    </script>
+    </script> -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
@@ -41,12 +41,6 @@
 
       .hero-bg {
         background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
 
       .project-card:hover .project-overlay {
@@ -75,19 +69,58 @@
       .active::after {
         width: 100%;
       }
-      .service-card {
-        transition: all 0.3s ease;
+
+      .indigo-color {
+        color: #4f46e5;
       }
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1);
+
+      .indigo-bg {
+        background-color: #4f46e5;
       }
-      .icon-container {
-        transition: all 0.3s ease;
+
+      .dark-gray {
+        color: #374151;
       }
-      .service-card:hover .icon-container {
+
+      .featured-card {
+        border: 2px solid #4f46e5;
+        box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1),
+          0 10px 10px -5px rgba(79, 70, 229, 0.04);
+        transform: translateY(-10px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-card::before {
+        content: "Offre principale";
+        position: absolute;
+        top: 10px;
+        right: -35px;
         background-color: #4f46e5;
         color: white;
+        padding: 5px 40px;
+        font-size: 12px;
+        transform: rotate(45deg);
+      }
+
+      .option-card {
+        transition: all 0.3s ease;
+      }
+
+      .option-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .cta-button {
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1),
+          0 2px 4px -1px rgba(79, 70, 229, 0.06);
       }
     </style>
   </head>
@@ -254,139 +287,329 @@
       </div>
     </section>
 
-    <section id="services" class="bg-gray-100 py-16 px-4 font-poppins">
-      <div class="max-w-6xl mx-auto">
-        <!-- En-tête de section -->
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
-            Mon offre
-          </h2>
-          <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Un site vitrine clé en main pour faire rayonner votre activité en
-            ligne.
+    <section id="services" class="py-16 px-4 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold dark-gray mb-3">Mes Offres</h2>
+        <p class="text-xl text-gray-600">
+          Des solutions adaptées à vos besoins
+        </p>
+        <div class="w-24 h-1 indigo-bg mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-1">
+          <div class="bg-white rounded-lg p-8 shadow-lg h-full">
+            <div class="flex items-center mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 indigo-color mr-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h3 class="text-2xl font-semibold dark-gray">
+                Pourquoi choisir mes services ?
+              </h3>
+            </div>
+            <ul class="space-y-4 text-gray-600">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 indigo-color mr-2 mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Design professionnel et moderne</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 indigo-color mr-2 mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Site responsive adapté à tous les appareils</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 indigo-color mr-2 mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Optimisation pour les moteurs de recherche</span>
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 indigo-color mr-2 mt-1 flex-shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Accompagnement personnalisé</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2">
+          <div class="featured-card bg-white rounded-lg p-8 shadow-lg h-full">
+            <div class="flex items-center mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 indigo-color mr-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              <h3 class="text-2xl font-semibold dark-gray">
+                Site Vitrine Professionnel
+              </h3>
+            </div>
+
+            <div class="mb-6">
+              <p class="text-gray-600 mb-4">
+                Un site web complet et personnalisé pour présenter votre
+                activité avec efficacité.
+              </p>
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full"
+                  >Jusqu'à 5 pages</span
+                >
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full"
+                  >Design responsive</span
+                >
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full"
+                  >Formulaire de contact</span
+                >
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-medium px-3 py-1 rounded-full"
+                  >Référencement de base</span
+                >
+              </div>
+            </div>
+
+            <div class="flex items-end justify-between">
+              <div>
+                <p class="text-gray-500 text-sm">À partir de</p>
+                <p class="text-4xl font-bold indigo-color">250 €</p>
+              </div>
+
+              <a
+                href="#contact"
+                class="cta-button indigo-bg text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                >Demander un devis</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-semibold dark-gray mb-8 text-center">
+        Options supplémentaires
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="option-card bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 indigo-color mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <h4 class="text-lg font-medium dark-gray">Page supplémentaire</h4>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Ajoutez des pages à votre site pour présenter plus de contenu.
           </p>
-          <div class="w-24 h-1 bg-indigo-500 mx-auto mt-6 rounded-full"></div>
+          <p class="text-xl font-bold indigo-color">30 €</p>
         </div>
 
-        <!-- Grille des services -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <!-- Service 1 -->
-          <div
-            class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm"
-          >
-            <div
-              class="icon-container w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-6 mx-auto"
+        <div class="option-card bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 indigo-color mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-indigo-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 text-center mb-3">
-              Responsive & mobile-first
-            </h3>
-            <p class="text-gray-600 text-center">
-              Votre site s'adapte parfaitement à tous les appareils, des
-              smartphones aux grands écrans.
-            </p>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <h4 class="text-lg font-medium dark-gray">Google Maps</h4>
           </div>
-
-          <!-- Service 2 -->
-          <div
-            class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm"
-          >
-            <div
-              class="icon-container w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-6 mx-auto"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-indigo-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 text-center mb-3">
-              Optimisation SEO de base
-            </h3>
-            <p class="text-gray-600 text-center">
-              Votre site est conçu pour être bien référencé sur les moteurs de
-              recherche.
-            </p>
-          </div>
-
-          <!-- Service 3 -->
-          <div
-            class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm"
-          >
-            <div
-              class="icon-container w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-6 mx-auto"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-indigo-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 text-center mb-3">
-              Livraison rapide en 7 jours
-            </h3>
-            <p class="text-gray-600 text-center">
-              Votre projet est réalisé et livré en une semaine pour un lancement
-              rapide.
-            </p>
-          </div>
+          <p class="text-gray-600 mb-4">
+            Intégration d'une carte interactive pour localiser votre entreprise.
+          </p>
+          <p class="text-xl font-bold indigo-color">50 €</p>
         </div>
 
-        <!-- Prix et CTA -->
-        <div
-          class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto"
+        <div class="option-card bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 indigo-color mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <h4 class="text-lg font-medium dark-gray">Galerie photo</h4>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Présentez vos réalisations avec une galerie d'images
+            professionnelle.
+          </p>
+          <p class="text-xl font-bold indigo-color">60 €</p>
+        </div>
+
+        <!-- <div class="option-card bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 indigo-color mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <h4 class="text-lg font-medium dark-gray">Maintenance 1 mois</h4>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Mises à jour et assistance technique pendant un mois.
+          </p>
+          <p class="text-xl font-bold indigo-color">40 €</p>
+        </div> -->
+
+        <!-- <div class="option-card bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 indigo-color mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+              />
+            </svg>
+            <h4 class="text-lg font-medium dark-gray">Rédaction de texte</h4>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Création de contenu optimisé pour votre site web.
+          </p>
+          <p class="text-xl font-bold indigo-color">50-100 €</p>
+        </div> -->
+      </div>
+
+      <div
+        class="bg-gradient-to-r from-indigo-500 to-indigo-700 rounded-lg p-8 text-white text-center"
+      >
+        <h3 class="text-2xl font-semibold mb-4">
+          Prêt à lancer votre projet ?
+        </h3>
+        <p class="mb-6">
+          Contactez-moi pour discuter de vos besoins et obtenir un devis
+          personnalisé.
+        </p>
+        <a
+          href="#contact"
+          id="cta-button"
+          class="cta-button bg-white text-indigo-600 font-medium py-3 px-8 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all"
         >
-          <h3 class="text-2xl font-semibold text-gray-800 mb-6">
-            Prêt à lancer votre projet ?
-          </h3>
-          <div class="mb-8">
-            <span class="text-gray-600 text-lg">À partir de</span>
-            <p class="text-4xl md:text-5xl font-bold text-indigo-600 my-2">
-              250€
-            </p>
-            <span class="text-gray-600">Site vitrine personnalisé</span>
-          </div>
-          <a
-            href="#contact"
-            class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
-            >Demander un devis</a
-          >
-          <p class="text-gray-500 mt-4 text-sm">
-            Sans engagement - Réponse sous 48h
-          </p>
-        </div>
+          Demander un devis</a
+        >
       </div>
     </section>
 
@@ -457,10 +680,7 @@
                   class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
                   >html/tailwind</span
                 >
-                <span
-                  class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
-                  >JavaScript</span
-                >
+
                 <span
                   class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
                   >Responsive</span
